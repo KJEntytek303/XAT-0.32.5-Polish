@@ -292,7 +292,7 @@ public class EntityProperties extends CapabilityBase<EntityProperties, EntityLiv
 			if (UpdateEvent.raceChanged()) {
 				EntityRace newRace = UpdateEvent.getNewRace();
 				if (newRace == null) {
-					newRace = EntityRaces.human;
+					newRace = EntityRaces.none;
 				}
 				final EntityRacePropertiesHandler oldProperties = this.getRaceHandler();
 				final TransformationEvent.EndTransformation end = new EndTransformation(object, this, oldProperties.getRace());
@@ -357,7 +357,7 @@ public class EntityProperties extends CapabilityBase<EntityProperties, EntityLiv
 			return ((IRaceProvider) provider.getItem()).getRace();
 		}
 		final EntityRace imbued = this.getImbuedRace();
-		if ((imbued != null) && !imbued.equals(EntityRaces.human)) {
+		if ((imbued != null) && !imbued.equals(EntityRaces.none)) {
 			this.setFake(false);
 			return imbued;
 		} else {

@@ -190,13 +190,14 @@ public class CommandMain extends CommandBase {
 				if (length > 1) {
 					String prefixCommand = args[1];
 					if (length > 2) {
-						String command = args[2];
+						String command = args[2].toLowerCase(Locale.ENGLISH);
 						String race = "";
 						if (length > 3) {
-							race = args[3];
+							race = args[3].toLowerCase(Locale.ENGLISH);
 						}
 						EntityRace r = EntityRace.getByNameOrId(race);
-						switch (command.toLowerCase(Locale.ENGLISH)) {
+						//						System.out.println("??? " + race + "|" + r + "|" + command);
+						switch (command) {
 						case "setrace":
 							if (r != null) {
 								capability.setOriginalRace(r);
