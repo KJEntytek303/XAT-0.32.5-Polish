@@ -253,6 +253,7 @@ public class ServerConfig {
 		@LangKey(cfgPrefix + "." + ModItems.FaelisClaws)
 		public ConfigFaelisClaw FAELIS_CLAW = new ConfigFaelisClaw();
 
+		// TODO Fix
 		//		@Config.Name("Leveling Device Settings")
 		//		@Config.Comment("")
 		//		@LangKey(cfgPrefix + "." + ModItems.ExpDevice)

@@ -10,12 +10,10 @@ import xzeroair.trinkets.Trinkets;
 import xzeroair.trinkets.items.base.AccessoryBase;
 import xzeroair.trinkets.traits.abilities.interfaces.IAbilityInterface;
 import xzeroair.trinkets.traits.abilities.other.AbilityLevelingBuff;
-import xzeroair.trinkets.util.TrinketsConfig;
-import xzeroair.trinkets.util.config.trinkets.ConfigExpDevice;
 
 public class TrinketExpDevice extends AccessoryBase {
-
-	public static final ConfigExpDevice serverConfig = TrinketsConfig.SERVER.Items.EXP_DEVICE;
+	// TODO Fix
+	//	public static final ConfigExpDevice serverConfig = TrinketsConfig.SERVER.Items.EXP_DEVICE;
 
 	public TrinketExpDevice(String name) {
 		super(name);
@@ -24,7 +22,7 @@ public class TrinketExpDevice extends AccessoryBase {
 
 	@Override
 	public String[] getAttributeConfig() {
-		return serverConfig.attributes;
+		return new String[0];//serverConfig.attributes;
 	}
 
 	@Override
@@ -34,7 +32,7 @@ public class TrinketExpDevice extends AccessoryBase {
 
 	@Override
 	public boolean ItemEnabled() {
-		return serverConfig.enabled;
+		return false;//serverConfig.enabled;
 	}
 
 	@Override

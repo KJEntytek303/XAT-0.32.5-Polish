@@ -15,7 +15,9 @@ public class BaubleExpDevice extends TrinketExpDevice implements IBauble {
 
 	@Override
 	public BaubleType getBaubleType(ItemStack itemstack) {
-		return BaublesHelper.getBaubleType(serverConfig.compat.baubles.bauble_type);
+		//		return BaublesHelper.getBaubleType(serverConfig.compat.baubles.bauble_type);
+		// TODO Fix
+		return BaublesHelper.getBaubleType("trinket");
 	}
 
 	@Override
