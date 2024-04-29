@@ -16,6 +16,7 @@ import xzeroair.trinkets.items.baubles.BaubleArcingOrb;
 import xzeroair.trinkets.items.baubles.BaubleDamageShield;
 import xzeroair.trinkets.items.baubles.BaubleDragonsEye;
 import xzeroair.trinkets.items.baubles.BaubleEnderTiara;
+import xzeroair.trinkets.items.baubles.BaubleExpDevice;
 import xzeroair.trinkets.items.baubles.BaubleFaelisClaws;
 import xzeroair.trinkets.items.baubles.BaubleGlowRing;
 import xzeroair.trinkets.items.baubles.BaubleGreaterInertia;
@@ -31,6 +32,7 @@ import xzeroair.trinkets.items.foods.Mana_Candy;
 import xzeroair.trinkets.items.foods.Mana_Crystal;
 import xzeroair.trinkets.items.foods.Mana_Reagent;
 import xzeroair.trinkets.items.foods.Restore_Item;
+import xzeroair.trinkets.items.misc.TrinketExpDevice;
 import xzeroair.trinkets.items.trinkets.TrinketArcingOrb;
 import xzeroair.trinkets.items.trinkets.TrinketDamageShield;
 import xzeroair.trinkets.items.trinkets.TrinketDragonsEye;
@@ -75,6 +77,7 @@ public class ModItems {
 	public static final String DragonRing		= "dragon_ring";
 	public static final String DragonShield		= "dragon_shield";
 
+	public static final String ExpDevice		= "leveling_device";
 	public static final String Horn				= "horn_of_plenty";
 
 	public static final String GlitterBow		= "glitter_bow";
@@ -115,7 +118,6 @@ public class ModItems {
 	public static class foods   {
 		public static final List<Item> ITEMS = new ArrayList<>();
 
-
 		public static final Item dwarf_stout	 			= new RaceFood("dwarf_stout", 16, EnumAction.DRINK ,EntityRaces.dwarf);
 		public static final Item elf_sap	 				= new RaceFood("elf_sap", 32, EnumAction.DRINK, EntityRaces.elf);
 		public static final Item faelis_nip	 				= new RaceFood("faelis_food", 32, EnumAction.EAT, EntityRaces.faelis);
@@ -152,7 +154,6 @@ public class ModItems {
 		public static final List<Item> ITEMS = new ArrayList<>();
 
 		protected static void registerItems() {
-
 		}
 
 		private static void registerItem(Item item) {
@@ -180,16 +181,18 @@ public class ModItems {
 
 		public static final Item BaubleFaelisClaw		= new BaubleFaelisClaws(FaelisClaws);
 
+		public static final Item BaubleExpDevice		= new BaubleExpDevice(ExpDevice);
+
 		// Race Rings
-		public static final Item BaubleFairyRing 		= new BaubleRaceBase(FairyRing, EntityRaces.fairy, TrinketsConfig.SERVER.Items.raceRings.FAIRY_RING);// new TrinketFairyRing(FairyRing);
-		public static final Item BaubleDwarfRing 		= new BaubleRaceBase(DwarfRing, EntityRaces.dwarf, TrinketsConfig.SERVER.Items.raceRings.DWARF_RING);//new TrinketDwarfRing(DwarfRing);
-		public static final Item BaubleTitanRing		= new BaubleRaceBase(TitanRing, EntityRaces.titan, TrinketsConfig.SERVER.Items.raceRings.TITAN_RING);//new TrinketTitanRing(TitanRing);
-		public static final Item BaubleGoblinRing		= new BaubleRaceBase(GoblinRing, EntityRaces.goblin, TrinketsConfig.SERVER.Items.raceRings.GOBLIN_RING);//new TrinketGoblinRing(GoblinRing);
-		public static final Item BaubleElfRing			= new BaubleRaceBase(ElfRing, EntityRaces.elf, TrinketsConfig.SERVER.Items.raceRings.ELF_RING);//new TrinketElfRing(ElfRing);
+		public static final Item BaubleFairyRing 		= new BaubleRaceBase(FairyRing, EntityRaces.fairy, TrinketsConfig.SERVER.Items.raceRings.FAIRY_RING);
+		public static final Item BaubleDwarfRing 		= new BaubleRaceBase(DwarfRing, EntityRaces.dwarf, TrinketsConfig.SERVER.Items.raceRings.DWARF_RING);
+		public static final Item BaubleTitanRing		= new BaubleRaceBase(TitanRing, EntityRaces.titan, TrinketsConfig.SERVER.Items.raceRings.TITAN_RING);
+		public static final Item BaubleGoblinRing		= new BaubleRaceBase(GoblinRing, EntityRaces.goblin, TrinketsConfig.SERVER.Items.raceRings.GOBLIN_RING);
+		public static final Item BaubleElfRing			= new BaubleRaceBase(ElfRing, EntityRaces.elf, TrinketsConfig.SERVER.Items.raceRings.ELF_RING);
 
-		public static final Item BaubleFaelisRing		= new BaubleRaceBase(FaelisRing, EntityRaces.faelis, TrinketsConfig.SERVER.Items.raceRings.FAELIS_RING);//new TrinketElfRing(ElfRing);
+		public static final Item BaubleFaelisRing		= new BaubleRaceBase(FaelisRing, EntityRaces.faelis, TrinketsConfig.SERVER.Items.raceRings.FAELIS_RING);
 
-		public static final Item BaubleDragonRing		= new BaubleRaceBase(DragonRing, EntityRaces.dragon, TrinketsConfig.SERVER.Items.raceRings.DRAGON_RING);//new TrinketElfRing(ElfRing);
+		public static final Item BaubleDragonRing		= new BaubleRaceBase(DragonRing, EntityRaces.dragon, TrinketsConfig.SERVER.Items.raceRings.DRAGON_RING);
 
 		protected static void registerItems() {
 			// Trinkets
@@ -207,6 +210,8 @@ public class ModItems {
 			registerItem(BaubleArcingOrb);
 			registerItem(BaubleTeddyBear);
 			registerItem(BaubleFaelisClaw);
+
+//			registerItem(BaubleExpDevice);
 			// Rings
 			registerItem(BaubleFairyRing);
 			registerItem(BaubleDwarfRing);
@@ -241,6 +246,8 @@ public class ModItems {
 
 		public static final Item TrinketFaelisClaw 		= new TrinketFaelisClaws(FaelisClaws);
 
+		public static final Item TrinketExpDevice		= new TrinketExpDevice(ExpDevice);
+
 		protected static void registerItems() {
 			registerItem(TrinketWeightless);
 			registerItem(TrinketInertiaNull);
@@ -256,6 +263,7 @@ public class ModItems {
 			registerItem(TrinketArcingOrb);
 			registerItem(TrinketTeddyBear);
 			registerItem(TrinketFaelisClaw);
+//			registerItem(TrinketExpDevice);
 		}
 
 		private static void registerItem(Item item) {
@@ -265,13 +273,13 @@ public class ModItems {
 
 	public static class RaceTrinkets {
 		public static final List<Item> ITEMS = new ArrayList<>();
-		public static final Item TrinketFairyRing 		= new TrinketRaceBase(FairyRing, EntityRaces.fairy, TrinketsConfig.SERVER.Items.raceRings.FAIRY_RING);// new TrinketFairyRing(FairyRing);
-		public static final Item TrinketDwarfRing 		= new TrinketRaceBase(DwarfRing, EntityRaces.dwarf, TrinketsConfig.SERVER.Items.raceRings.DWARF_RING);//new TrinketDwarfRing(DwarfRing);
-		public static final Item TrinketTitanRing		= new TrinketRaceBase(TitanRing, EntityRaces.titan, TrinketsConfig.SERVER.Items.raceRings.TITAN_RING);//new TrinketTitanRing(TitanRing);
-		public static final Item TrinketGoblinRing		= new TrinketRaceBase(GoblinRing, EntityRaces.goblin, TrinketsConfig.SERVER.Items.raceRings.GOBLIN_RING);//new TrinketGoblinRing(GoblinRing);
-		public static final Item TrinketElfRing			= new TrinketRaceBase(ElfRing, EntityRaces.elf, TrinketsConfig.SERVER.Items.raceRings.ELF_RING);//new TrinketElfRing(ElfRing);
-		public static final Item TrinketFaelisRing		= new TrinketRaceBase(FaelisRing, EntityRaces.faelis, TrinketsConfig.SERVER.Items.raceRings.FAELIS_RING);//new TrinketElfRing(ElfRing);
-		public static final Item TrinketDragonRing		= new TrinketRaceBase(DragonRing, EntityRaces.dragon, TrinketsConfig.SERVER.Items.raceRings.DRAGON_RING);//new TrinketElfRing(ElfRing);
+		public static final Item TrinketFairyRing 		= new TrinketRaceBase(FairyRing, EntityRaces.fairy, TrinketsConfig.SERVER.Items.raceRings.FAIRY_RING);
+		public static final Item TrinketDwarfRing 		= new TrinketRaceBase(DwarfRing, EntityRaces.dwarf, TrinketsConfig.SERVER.Items.raceRings.DWARF_RING);
+		public static final Item TrinketTitanRing		= new TrinketRaceBase(TitanRing, EntityRaces.titan, TrinketsConfig.SERVER.Items.raceRings.TITAN_RING);
+		public static final Item TrinketGoblinRing		= new TrinketRaceBase(GoblinRing, EntityRaces.goblin, TrinketsConfig.SERVER.Items.raceRings.GOBLIN_RING);
+		public static final Item TrinketElfRing			= new TrinketRaceBase(ElfRing, EntityRaces.elf, TrinketsConfig.SERVER.Items.raceRings.ELF_RING);
+		public static final Item TrinketFaelisRing		= new TrinketRaceBase(FaelisRing, EntityRaces.faelis, TrinketsConfig.SERVER.Items.raceRings.FAELIS_RING);
+		public static final Item TrinketDragonRing		= new TrinketRaceBase(DragonRing, EntityRaces.dragon, TrinketsConfig.SERVER.Items.raceRings.DRAGON_RING);
 
 		protected static void registerItems() {
 			registerItem(TrinketFairyRing);

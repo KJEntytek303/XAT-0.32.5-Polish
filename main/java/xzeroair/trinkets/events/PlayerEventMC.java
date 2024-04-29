@@ -18,6 +18,7 @@ import xzeroair.trinkets.api.TrinketHelper;
 import xzeroair.trinkets.capabilities.Capabilities;
 import xzeroair.trinkets.traits.AbilityHandler.AbilityHolder;
 import xzeroair.trinkets.traits.abilities.interfaces.IAbilityInterface;
+import xzeroair.trinkets.traits.abilities.interfaces.IPickupExpAbility;
 import xzeroair.trinkets.traits.abilities.interfaces.ISleepAbility;
 import xzeroair.trinkets.util.TrinketsConfig;
 
@@ -112,7 +113,6 @@ public class PlayerEventMC {
 	@SubscribeEvent
 	public void playerClone(PlayerPickupXpEvent event) {
 		//		try {
-		//			final EntityPlayer player = event.getEntityPlayer();
 		//			final int total = player.experienceTotal;
 		//			final int level = player.experienceLevel;
 		//			final float exp = player.experience;
@@ -120,6 +120,25 @@ public class PlayerEventMC {
 		//			System.out.println("total:" + total + ", level:" + level + ", exp:" + exp + " +" + gainedExp);
 		//		} catch (Exception e) {
 		//		}
+
+		//		final EntityLivingBase entity = event.getEntityLiving();
+		final EntityPlayer player = event.getEntityPlayer();
+		Capabilities.getEntityProperties(player, prop -> {
+			Map<String, AbilityHolder> abilities = prop.getAbilityHandler().getActiveAbilities();
+			for (Entry<String, AbilityHolder> entry : abilities.entrySet()) {
+				String key = entry.getKey();
+				AbilityHolder value = entry.getValue();
+				try {
+					IAbilityInterface ability = value.getAbility();
+					if ((ability instanceof IPickupExpAbility)) {
+						((IPickupExpAbility) ability).onPickup(player, event.getOrb());
+					}
+				} catch (Exception e) {
+					Trinkets.log.error("Trinkets had an Error with Ability:" + key);
+					e.printStackTrace();
+				}
+			}
+		});
 	}
 
 	@SubscribeEvent

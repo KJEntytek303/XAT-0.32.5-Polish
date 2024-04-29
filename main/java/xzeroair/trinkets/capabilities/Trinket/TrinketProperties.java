@@ -397,7 +397,6 @@ public class TrinketProperties extends CapabilityBase<TrinketProperties, ItemSta
 		if (mainAbility != bool) {
 			mainAbility = bool;
 			this.saveToNBT(this.getTag());
-			//		this.getTag().setBoolean("main.ability", bool);
 		}
 	}
 
@@ -410,7 +409,6 @@ public class TrinketProperties extends CapabilityBase<TrinketProperties, ItemSta
 			altAbility = bool;
 			this.saveToNBT(this.getTag());
 		}
-		//		this.getTag().setBoolean("alt.ability", bool);
 	}
 
 	public int StoredExp() {

@@ -42,6 +42,8 @@ public class Abilities {
 	public static final String heavy						="heavy";
 	public static final String mountEnhancement				="mount_enhancement";
 
+	public static final String LevelingAbility				="leveling";
+
 	// External Mods
 	public static final String survivalHeatImmunity			="heat_immunity";
 	public static final String survivalColdImmunity			="cold_immunity";
