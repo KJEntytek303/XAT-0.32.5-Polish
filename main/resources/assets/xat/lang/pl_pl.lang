@@ -51,7 +51,7 @@ attribute.name.xat.entityRace=Zaklęta rasa
 
 entity.AlphaWolf.name=Król wilków
 
-ability.block_detection.name=Chciwe oczy
+ability.block_detection.name=§aChciwe oczy
 ability.block_detection.tooltip1=Daje użytkownikowi umiejętność znajdowania pobliskich skarbów
 ability.block_detection.tooltip2=Naciśnij *deofkb: = Następny cel
 ability.block_detection.tooltip3=Naciśnij *auxkb:+*deofkb: = Poprzedni cel
@@ -810,7 +810,7 @@ xat.config.server.teddy_bear.sleepbonus.buff.tooltip=Jakie wzmocnienia należy n
 xat.config.server.teddy_bear.sleepbonus.buff.random=Losowe wzmocnienia
 xat.config.server.teddy_bear.sleepbonus.buff.random.tooltip=Jeżeli ta wartość jest większa od 0, zamiast dawać każde wzmocnienie z listy, daje X losowych wzmocnień
 
-xat.config.faelis_claw=Faelis Claw Settings
+xat.config.faelis_claw=Ustawienia pazura kotowatych
 xat.config.faelis_claw.tooltip=
 
 xat.config.server.faelis_claw.bleeding=Krwawienie?
